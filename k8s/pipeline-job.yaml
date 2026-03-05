@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: agent-data-pipeline
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: pipeline
+          image: ghcr.io/dsantoreis/agent-data-pipeline-rust:latest
+          args:
+            - --input
+            - /data/input.csv
+            - --output
+            - /data/out.json
+            - --min-amount
+            - "10"
+            - --uppercase-name
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          configMap:
+            name: pipeline-input

@@ -1,0 +1,14 @@
+services:
+  pipeline:
+    build: .
+    image: agent-data-pipeline-rust:latest
+    command:
+      - --input
+      - /data/input.csv
+      - --output
+      - /data/out.json
+      - --min-amount
+      - "10"
+      - --uppercase-name
+    volumes:
+      - ./tests/fixtures:/data
