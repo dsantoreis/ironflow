@@ -17,7 +17,7 @@ pub struct PipelineOptions {
 }
 
 pub fn transform(records: Vec<Record>, opts: &PipelineOptions) -> Vec<Record> {
-    records
+    let mut out: Vec<Record> = records
         .into_par_iter()
         .filter(|r| opts.min_amount.map(|m| r.amount >= m).unwrap_or(true))
         .filter(|r| {
@@ -32,7 +32,10 @@ pub fn transform(records: Vec<Record>, opts: &PipelineOptions) -> Vec<Record> {
             }
             r
         })
-        .collect()
+        .collect();
+
+    out.sort_by_key(|r| r.id);
+    out
 }
 
 pub fn ingest_csv(path: &str) -> anyhow::Result<Vec<Record>> {
@@ -80,5 +83,33 @@ mod tests {
         assert_eq!(out.len(), 1);
         assert_eq!(out[0].name, "ALICE");
         assert_eq!(out[0].id, 1);
+    }
+
+    #[test]
+    fn transform_returns_stable_order_by_id() {
+        let input = vec![
+            Record {
+                id: 9,
+                name: "zeta".into(),
+                amount: 10.0,
+                category: "retail".into(),
+            },
+            Record {
+                id: 3,
+                name: "alpha".into(),
+                amount: 11.0,
+                category: "retail".into(),
+            },
+            Record {
+                id: 5,
+                name: "beta".into(),
+                amount: 12.0,
+                category: "retail".into(),
+            },
+        ];
+
+        let out = transform(input, &PipelineOptions::default());
+        let ids: Vec<u64> = out.into_iter().map(|r| r.id).collect();
+        assert_eq!(ids, vec![3, 5, 9]);
     }
 }
