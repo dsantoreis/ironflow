@@ -71,6 +71,10 @@ docker run --rm -v $(pwd)/tests/fixtures:/data ironflow:latest \
   --input /data/input.csv --output /data/out.json --min-amount 10 --uppercase-name
 ```
 
+```bash
+docker compose up --build
+```
+
 ---
 
 ## Kubernetes
