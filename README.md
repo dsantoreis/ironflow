@@ -102,6 +102,16 @@ Coverage is gated at **80% minimum** and uploaded as a CI artifact for auditabil
 
 ## Architecture
 
+```mermaid
+graph TD
+  A[CSV input] --> B[CLI parser src/main.rs]
+  B --> C[Transform engine src/lib.rs]
+  C --> D[JSON output]
+  C --> E[Validation and filtering]
+  F[CI workflow] --> G[fmt + clippy + tests + coverage]
+  G --> H[Release artifact]
+```
+
 - Core transform logic: `src/lib.rs`
 - CLI and IO orchestration: `src/main.rs`
 - Docs: `docs-site/` (Astro Starlight)
