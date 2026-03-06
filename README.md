@@ -8,6 +8,9 @@
 
 Built for teams that need one binary that behaves the same in local runs, CI jobs, Docker containers, and Kubernetes workloads.
 
+![Ironflow hero](docs/screenshots/ironflow-hero.png)
+![Ironflow demo GIF](docs/screenshots/ironflow-demo.gif)
+
 ---
 
 ## Problem
