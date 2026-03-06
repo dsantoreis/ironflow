@@ -96,7 +96,7 @@ GitHub Actions executes:
 - `cargo build --release`
 - `cargo llvm-cov --all-targets --fail-under-lines 80 --summary-only`
 
-Coverage is gated at **80% minimum** and uploaded as an artifact in CI.
+Coverage is gated at **80% minimum** and uploaded as a CI artifact for auditability.
 
 ---
 
