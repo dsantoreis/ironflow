@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ironflow-docs
+  labels:
+    app: ironflow-docs
+spec:
+  selector:
+    app: ironflow-docs
+  ports:
+    - name: http
+      port: 80
+      targetPort: 4321
+      protocol: TCP
+  type: ClusterIP
