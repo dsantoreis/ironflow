@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ironflow-gateway
+  labels:
+    app: ironflow-gateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ironflow-gateway
+  template:
+    metadata:
+      labels:
+        app: ironflow-gateway
+    spec:
+      containers:
+        - name: healthz
+          image: hashicorp/http-echo:1.0.0
+          args:
+            - -listen=:8080
+            - -text=ironflow runner healthy (submit jobs with k8s/pipeline-job.yaml)
+          ports:
+            - containerPort: 8080
+              name: http

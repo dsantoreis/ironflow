@@ -115,7 +115,7 @@ graph TD
 - Core transform logic: `src/lib.rs`
 - CLI and IO orchestration: `src/main.rs`
 - Docs: `docs-site/` (Astro Starlight)
-- Runtime manifests: `Dockerfile`, `k8s/pipeline-job.yaml`
+- Runtime manifests: `Dockerfile`, `k8s/deployment.yaml`, `k8s/service.yaml`, `k8s/ingress.yaml`, `k8s/pipeline-job.yaml`
 
 ---
 
