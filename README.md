@@ -1,5 +1,8 @@
 # Agent Data Pipeline (Rust)
 
+[![CI](../../actions/workflows/ci.yml/badge.svg)](#) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+
+
 High-performance **ingest → transform → export** CLI for operational data flows.
 
 Built for teams that need a fast, predictable pipeline executable in CI, containers, or Kubernetes.
@@ -82,3 +85,40 @@ kubectl apply -f k8s/pipeline-job.yaml
 - Pluggable transforms (WASM)
 - Parquet export
 - Observability metrics (OpenTelemetry)
+
+
+## Conversion Standard
+
+### Hero
+Production-ready solution for a concrete business problem with measurable outcome.
+
+### Problem
+Describe the pain with one sentence and a real operator context.
+
+### Demo
+Add a GIF at `docs/assets/demo.gif` and reference it here.
+
+### Quickstart (3 commands)
+```bash
+make setup || pnpm install || npm install
+make test || pnpm test || npm test
+make run || pnpm dev || npm run dev
+```
+
+### Architecture
+Document API, workers, and storage in `docs/architecture.md`.
+
+### Results
+Add benchmark, latency, throughput, or conversion impact.
+
+### Roadmap
+Include 30-day and 90-day milestones.
+
+### CTA
+If this helps, star the repo and open an issue with your use case.
+
+
+## Docs
+
+- Local docs site config: `mkdocs.yml`
+- Entry point: `docs/index.md`
