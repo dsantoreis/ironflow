@@ -131,4 +131,4 @@ Current test suite covers transformation behavior and CLI integration path (CSV 
 ## CTA
 
 If Ironflow helps your team, star the repo and open an issue with your real pipeline use case.
-Contributions with reproducible datasets, benchmark numbers, and coverage deltas are especially welcome.
+Contributions with reproducible datasets, benchmark numbers, coverage deltas, and CI logs are especially welcome.
