@@ -30,3 +30,18 @@ jobs:
 
       - name: Coverage gate (>=80%)
         run: cargo llvm-cov --all-targets --fail-under-lines 80 --summary-only
+
+  docs-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs-site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install docs deps
+        run: npm ci
+      - name: Build Astro Starlight docs
+        run: npm run build
