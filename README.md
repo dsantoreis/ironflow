@@ -15,7 +15,7 @@ Built for teams that need one binary that behaves the same in local runs, CI job
 
 ## Problem
 
-Most ops pipelines fail under pressure because they depend on ad-hoc scripts, weak validation, and non-reproducible runtime behavior.
+Most ops pipelines fail under pressure because they depend on ad-hoc scripts, weak validation, and non-reproducible runtime behavior across environments.
 
 Ironflow solves this with a strict CLI contract, deterministic transforms, and CI-gated quality.
 
