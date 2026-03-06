@@ -39,3 +39,9 @@ Ajuste o host no `k8s/ingress.yaml` para seu domínio real antes de produção.
 ## CI
 
 O workflow em `.github/workflows/docs-site.yml` valida build do docs-site em push/PR.
+
+### Compose
+
+```bash
+docker compose up --build
+```
