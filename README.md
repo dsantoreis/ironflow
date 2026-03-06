@@ -59,6 +59,8 @@ Static build:
 npm run build
 ```
 
+Published: GitHub Pages via `.github/workflows/docs.yml`
+
 ---
 
 ## Docker
