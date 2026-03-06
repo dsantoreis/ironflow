@@ -119,6 +119,26 @@ graph TD
 
 ---
 
+## Benchmarks
+
+Measured on Apple M4 (Darwin arm64), release binary, fixture `tests/fixtures/input.csv`.
+
+| Metric | Result |
+| --- | --- |
+| Mean latency (50 runs, after 5 warmups) | 1.93 ms |
+| p95 latency | 2.41 ms |
+| Max latency | 2.58 ms |
+| Peak memory footprint | 1.39 MB |
+
+Command used:
+
+```bash
+./target/release/agent-data-pipeline-rust \
+  --input tests/fixtures/input.csv \
+  --output /tmp/ironflow-out.json \
+  --min-amount 10 --category retail --uppercase-name
+```
+
 ## Results
 
 Current test suite covers transformation behavior and CLI integration path (CSV → JSON), with coverage threshold enforced in CI.
