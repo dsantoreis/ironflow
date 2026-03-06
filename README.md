@@ -80,7 +80,7 @@ docker compose up --build
 ## Kubernetes
 
 ```bash
-kubectl apply -f k8s/pipeline-job.yaml
+kubectl apply -f k8s/
 ```
 
 ---
