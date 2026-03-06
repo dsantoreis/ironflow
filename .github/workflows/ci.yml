@@ -31,6 +31,13 @@ jobs:
       - name: Coverage gate (>=80%)
         run: cargo llvm-cov --all-targets --fail-under-lines 80 --summary-only
 
+      - name: Coverage report artifact
+        run: cargo llvm-cov --all-targets --lcov --output-path lcov.info
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ironflow-rust-coverage
+          path: lcov.info
+
   docs-build:
     runs-on: ubuntu-latest
     defaults:
