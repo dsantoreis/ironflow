@@ -56,6 +56,7 @@ npm run dev
 Static build:
 
 ```bash
+cd docs-site
 npm run build
 ```
 
