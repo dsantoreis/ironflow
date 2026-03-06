@@ -103,7 +103,7 @@ Coverage is gated at **80% minimum** and uploaded as an artifact in CI.
 
 - Core transform logic: `src/lib.rs`
 - CLI and IO orchestration: `src/main.rs`
-- Docs: `docs-site/` (Starlight)
+- Docs: `docs-site/` (Astro Starlight)
 - Runtime manifests: `Dockerfile`, `k8s/pipeline-job.yaml`
 
 ---
