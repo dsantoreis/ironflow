@@ -21,7 +21,7 @@ Ironflow solves this with a strict CLI contract, deterministic transforms, and C
 
 ---
 
-## Quickstart (3 comandos)
+## Quickstart (3 comandos, output determinístico)
 
 ```bash
 cargo build
