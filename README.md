@@ -59,7 +59,7 @@ Static build:
 npm run build
 ```
 
-Published: GitHub Pages via `.github/workflows/docs.yml`
+Published: https://dsantoreis.github.io/ironflow/ (GitHub Pages via `.github/workflows/docs.yml`)
 
 ---
 
